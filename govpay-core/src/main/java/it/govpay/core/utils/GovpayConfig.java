@@ -75,7 +75,7 @@ public class GovpayConfig {
 
 	private boolean batchEstrattoConto, batchEstrattoContoPdf;
 	private int numeroMesiEstrattoConto, giornoEsecuzioneEstrattoConto;
-	private String guestPapCode;
+	private String guestPapCode, backurlPap;
 	private String pathEstrattoConto, pathEstrattoContoPdf,pathEstrattoContoPdfLoghi;
 
 	private Properties[] props;
@@ -335,6 +335,8 @@ public class GovpayConfig {
 			}
 			
 			this.guestPapCode = getProperty("it.govpay.pap.guestPapCode", props, false, log);
+			
+			this.backurlPap = getProperty("it.govpay.pap.backurlPap", props, false, log);
 
 			String batchOnString = getProperty("it.govpay.batchOn", props, false, log);
 			if(batchOnString != null && batchOnString.equalsIgnoreCase("false"))
@@ -501,6 +503,10 @@ public class GovpayConfig {
 	
 	public String getGuestPapCode() {
 		return guestPapCode;
+	}
+	
+	public String getBackurlPap() {
+		return backurlPap;
 	}
 
 	public String getPathEstrattoContoPdf() {

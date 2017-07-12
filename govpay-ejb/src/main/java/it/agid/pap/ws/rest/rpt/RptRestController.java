@@ -10,6 +10,7 @@ import it.govpay.core.business.Pagamento;
 import it.govpay.core.business.model.AvviaTransazioneDTO;
 import it.govpay.core.business.model.AvviaTransazioneDTOResponse;
 import it.govpay.core.exceptions.GovPayException;
+import it.govpay.core.utils.GovpayConfig;
 import it.govpay.core.utils.GpContext;
 import it.govpay.core.utils.GpThreadLocal;
 import it.govpay.servizi.commons.EsitoOperazione;
@@ -115,7 +116,7 @@ public class RptRestController extends BasePapRsService {
 			richiesta.setCanale(canale);
 			richiesta.setCodPortale(portale.getCodPortale());
 			richiesta.setIbanAddebito(rpt.getDatiVersamento().getDatiSingoloVersamento().get(0).getIbanAccredito());
-			richiesta.setUrlRitorno(null);
+			richiesta.setUrlRitorno(GovpayConfig.getInstance().getBackurlPap());
 
 			if(rpt.getSoggettoVersante() != null) {
 				Anagrafica versante = new Anagrafica();
