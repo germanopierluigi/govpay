@@ -213,13 +213,7 @@
 					<xsd:extension base="ppt:risposta">
 						<xsd:sequence>
 							<xsd:element name="tipoFirma" type="xsd:string" minOccurs="0" />
-							<xsd:element name="rt" type="xsd:base64Binary" minOccurs="0">
-								<xsd:annotation>
-									<xsd:appinfo>
-										<jaxb:javaType name="byte[]" parseMethod="javax.xml.bind.DatatypeConverter.parseHexBinary" printMethod="javax.xml.bind.DatatypeConverter.printHexBinary" />
-									</xsd:appinfo>
-								</xsd:annotation>
-							</xsd:element>
+							<xsd:element name="rt" type="xsd:base64Binary" minOccurs="0" />
 						</xsd:sequence>
 					</xsd:extension>
 				</xsd:complexContent>

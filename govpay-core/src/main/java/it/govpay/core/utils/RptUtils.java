@@ -499,8 +499,6 @@ public class RptUtils {
 	
 						rptBD = new RptBD(bd);
 						
-						byte[] rtByte = nodoChiediCopiaRTRisposta.getRt();
-	
 						if(nodoChiediCopiaRTRisposta.getFault() != null) {
 							log.info("Fault nell'acquisizione dell'RT: [" + nodoChiediCopiaRTRisposta.getFault().getFaultCode() + "] " + nodoChiediCopiaRTRisposta.getFault().getFaultString());
 							log.info("Aggiorno lo stato della RPT [CodMsgRichiesta: " + rpt.getCodMsgRichiesta() + "] in " + nuovoStato + ".");
@@ -509,6 +507,8 @@ public class RptUtils {
 							rpt.setDescrizioneStato(null);
 							return true;
 						}
+						
+						byte[] rtByte = nodoChiediCopiaRTRisposta.getRt();
 						
 						GpThreadLocal.get().getContext().getRequest().addGenericProperty(new Property("ccp", rpt.getCcp()));
 						GpThreadLocal.get().getContext().getRequest().addGenericProperty(new Property("codDominio", rpt.getCodDominio()));
