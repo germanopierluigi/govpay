@@ -129,7 +129,7 @@
 			</resource>
 		</resources>
 
-		<finalName>pagopa</finalName>
+		<finalName>govpay</finalName>
 
 		<plugins>
 			<plugin>

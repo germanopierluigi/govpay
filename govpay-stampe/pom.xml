@@ -130,7 +130,7 @@
 						<configuration>
 							<target>2.1</target>
 							<sources>
-								<source>src/main/resources/schemi/xsd/govpayStampe.xsd</source>
+								<source>${project.basedir}/src/main/resources/schemi/xsd/govpayStampe.xsd</source>
 							</sources>
 							<packageName>it.govpay.stampe.model</packageName>
 							<clearOutputDir>false</clearOutputDir>
