@@ -50,7 +50,7 @@ public class StartupEjb {
 	private String govpayVersion = "${project.version}";
 	private String buildVersion = "${git.commit.id}";
 	private String tipoServizioGovpay = GpContext.TIPO_SERVIZIO_GOVPAY_OPT;
-	private String dominioAnagraficaManager = "it.govpay.cache.anagrafica.core";
+	private String dominioAnagraficaManager = "it.pagopa.cache.anagrafica.core";
 	
 	@PostConstruct
 	public void init() {

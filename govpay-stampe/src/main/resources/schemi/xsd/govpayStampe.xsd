@@ -33,6 +33,7 @@
 			<xsd:element name="qr_code" type="xsd:string"/>
 			<xsd:element name="cbill" type="xsd:string"/>
 			<xsd:element name="codice_avviso" type="xsd:string"/>
+			<xsd:element name="codice_avviso_postale" type="xsd:string"/>
 			<xsd:element name="numero_cc_postale" type="xsd:string"/>
 			<xsd:element name="intestatario_conto_corrente_postale" type="xsd:string"/>
 			<xsd:element name="autorizzazione" type="xsd:string"/>

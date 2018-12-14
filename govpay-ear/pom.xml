@@ -129,7 +129,7 @@
 			</resource>
 		</resources>
 
-		<finalName>govpay</finalName>
+		<finalName>pagopa</finalName>
 
 		<plugins>
 			<plugin>
@@ -148,37 +148,37 @@
 						<webModule>
 							<groupId>it.govpay</groupId>
 							<artifactId>govpay-web</artifactId>
-							<contextRoot>/govpay/frontend/api/pagopa</contextRoot>
+							<contextRoot>/pagopa/frontend/api/pagopa</contextRoot>
 						</webModule>
 						<webModule>
 							<groupId>it.govpay</groupId>
 							<artifactId>govpay-api-pagamento</artifactId>
-							<contextRoot>/govpay/frontend/api/pagamento</contextRoot>
+							<contextRoot>/pagopa/frontend/api/pagamento</contextRoot>
 						</webModule>
 						<webModule>
 							<groupId>it.govpay</groupId>
 							<artifactId>govpay-wc</artifactId>
-							<contextRoot>/govpay/frontend/web/connector</contextRoot>
+							<contextRoot>/pagopa/frontend/web/connector</contextRoot>
 						</webModule>
 						<webModule>
 							<groupId>it.govpay</groupId>
 							<artifactId>govpay-api-pendenze</artifactId>
-							<contextRoot>/govpay/backend/api/pendenze</contextRoot>
+							<contextRoot>/pagopa/backend/api/pendenze</contextRoot>
 						</webModule>
 						<webModule>
 							<groupId>it.govpay</groupId>
 							<artifactId>govpay-api-ragioneria</artifactId>
-							<contextRoot>/govpay/backend/api/ragioneria</contextRoot>
+							<contextRoot>/pagopa/backend/api/ragioneria</contextRoot>
 						</webModule>
 						<webModule>
 							<groupId>it.govpay</groupId>
 							<artifactId>govpay-api-backoffice</artifactId>
-							<contextRoot>/govpay/backend/api/backoffice</contextRoot>
+							<contextRoot>/pagopa/backend/api/backoffice</contextRoot>
 						</webModule>
 						<webModule>
 							<groupId>it.govpay</groupId>
 							<artifactId>govpay-web-console</artifactId>
-							<contextRoot>/govpay/backend/gui/backoffice</contextRoot>
+							<contextRoot>/pagopa/backend/gui/backoffice</contextRoot>
 						</webModule>
 					</modules>
 					<version>6</version>
