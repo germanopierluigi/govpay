@@ -159,6 +159,7 @@ Lo script completo è (si noti le parti di definizione dei pattern di email e co
 Validazione
 ~~~~~~~~~~~
 
+Lo script di validazione è ancora espresso nel formato json angular schema. Nel nostro esempio si presenta in questo modo:
 
             
               {
