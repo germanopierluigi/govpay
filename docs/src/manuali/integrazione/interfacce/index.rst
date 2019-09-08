@@ -259,7 +259,7 @@ Per i motivi appena descritti, si consiglia sempre di implementare i controlli f
 Trasformazione
 ~~~~~~~~~~~~~~
 
-Questa sezione provvede all'instradamento, previa loro trasformazione, dei dati immessi nel form verso i servizi che li consumeranno. Vediamone un esempio complessivo i cui blocchi commenteremo in modo dettagliato:
+Questa sezione provvede all'instradamento, previa loro trasformazione, dei dati immessi nel form verso i servizi che li consumeranno (applicazione selezionata nella sezione *Inoltro*). Vediamone un esempio complessivo i cui blocchi commenteremo in modo dettagliato:
        
 .. code-block:: guess    
 
@@ -309,8 +309,14 @@ Questa sezione provvede all'instradamento, previa loro trasformazione, dei dati 
    }
        
 
+Al fine di contestualizzare in modo opportuno il discorso fin qui fatto, è opportuno ricordare il sottostante di questo passo della filiera di elaborazione dei dati, come da interfaccia di configurazione:
 
 
+.. figure:: ../_images/INT13_ContestoDiRiferimento.png
+   :align: center
+   :name: ContestoDiRiferimento
+   
+   Contesto di riferimento della trasformazione
 
 
 
