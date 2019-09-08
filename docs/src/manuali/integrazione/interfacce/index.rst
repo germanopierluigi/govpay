@@ -240,7 +240,7 @@ Un'osservazione attenta dello script ne mostra la sostanziale equivalenza con qu
 3. l'email non è necessaria: per essa è comunque fornita un'espressione regolare che impedisce l'immissione di email non valide
 4. Il tipo sanzione ammette solo tre valori (123, 456, 789)
 
-In effetti, adoperando il simulatore segnalato prima si ottiene il seguente risultato
+In effetti, immettendo lo script nel simulatore prima segnalato si ottiene il seguente risultato
 
 
 .. figure:: ../_images/INT10_FormValidazione.png
@@ -280,7 +280,33 @@ Questa sezione provvede all'instradamento, previa loro trasformazione, dei dati 
 	<#assign importo = "307">
    <#setting locale="en_US">
    
-       
+   {
+	"idA2A": "A2A-DEMO",
+	"idPendenza": "${request.get("idPendenza").asText()}",
+	"idDominio": "${pathParams["idDominio"]}",
+	"idTipoPendenza": "${pathParams["idTipoPendenza"]}",
+ 	"causale": "Sanzione amministrativa - Verbale n. ${request.get("idPendenza").asText()}",
+	"soggettoPagatore": {
+		"tipo": "F",
+		"identificativo": "${request.get("soggettoPagatore").get("identificativo").asText()}",
+		"anagrafica": "${request.get("soggettoPagatore").get("anagrafica").asText()}",
+		"email": "${request.get("soggettoPagatore").get("email").asText()}"
+	},
+   	"importo": "${importo}",
+	"dataValidita": "${dataValidita}",
+	"dataScadenza": "${dataValidita}",
+	"tassonomiaAvviso": "Servizi erogati dal comune",
+	"voci": [
+		{
+			"idVocePendenza": "1",
+			"importo": "${importo}",
+			"descrizione": "${request.get("tipoSanzione").asText()}",
+			"ibanAccredito": "IT02L1234500000111110000001",
+			"tipoContabilita": "ALTRO",
+			"codiceContabilita": "${pathParams["idTipoPendenza"]}"
+		}
+	]
+   }
        
 
 
