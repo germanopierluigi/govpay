@@ -258,7 +258,8 @@ Trasformazione
 
 Questa sezione provvede all'instradamento, previa loro trasformazione, dei dati immessi nel form verso i servizi che li consumeranno. Vediamone un esempio complessivo i cui blocchi commenteremo in modo dettagliato:
        
-.. code-block:: guess                
+.. code-block:: guess    
+
    <#assign jsonUtilities = class["org.openspcoop2.utils.json.JSONUtils"].getInstance()>
    <#assign request = jsonUtilities.getAsNode(jsonPath.read("$"))>
    <#assign calendar = class["java.util.Calendar"]>
@@ -278,15 +279,7 @@ Questa sezione provvede all'instradamento, previa loro trasformazione, dei dati 
    
        
        
-.. figure:: ../_images/INT11_FormTrasformazione-1.png
-   :align: center
-   :name: Validazione1
-   
-.. figure:: ../_images/INT12_FormTrasformazione-2.png
-   :align: center
-   :name: Validazione2
-            
-            
+
 
 
 
