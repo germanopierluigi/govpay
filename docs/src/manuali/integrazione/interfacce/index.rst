@@ -93,7 +93,6 @@ Il risultato è il seguente
 Lo script completo è (si noti le parti di definizione dei pattern di email e codice fiscale)
 
 .. code-block:: guess
-
    {
 	"schema": {
 		   "type": "object",
