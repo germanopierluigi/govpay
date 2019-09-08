@@ -228,8 +228,23 @@ Lo script di validazione è ancora espresso nel formato json angular schema. Nel
 }
 
             
-            
+Un'osservazione attenta dello script ne mostra la sostanziale equivalenza con quello di definizione del layout. In effetti lo script afferma che:
+1. I campi necessari sono idPendenza, soggettoPagatore e tipoSanzione, che si mappano su quelli definiti nel punto precedente
+2. idPendenza è una stringa alfanumerica lunga fino a 35 caratteri
+3. l'email non è necessaria: per essa è comunque fornita un'espressione regolare che impedisce l'immissione di email non valide
+4. Il tipo sanzione ammette solo tre valori (123, 456, 789)
 
+In effetti, adoperando il simulatore segnalato prima si ottiene il seguente risultato
+
+
+.. figure:: ../_images/INT10_FormValidazione.png
+   :align: center
+   :name: Validazione
+            
+Si nota dai messaggi che il simulatore mostra come le componenti di validazione siano correttamente interpretate.
+
+Ci si potrebbe chiedere il perchè di questa ripetizione (Layout Form Dati e Validazione): la ragione di questa necessità risiede nel comportamento non omogeneo dei browser. La prima validazione è infatti demandata al lato client della filiera applicativa, che non ha alcun contratto sull'esecuzione dei controlli. In altre parole, la piattaforma non ha alcuna sicurezza che i controlli immessi nel Layout Form saranno davvero effettuati lato client: l'unica strategia davvero cautelativa, in casi come questi, è pertanto quella di avere uno strato server di gestione degli errori che, prima di interpretare i dati e trasformarli, provveda alla validazione di quanto immesso anche se arrivato al server senza controlli clienti (comportamento del browser).
+Per i motivi appena descritti, si consiglia sempre di implementare i controlli formali anche in questa sezione.
 
 
 Trasformazione
