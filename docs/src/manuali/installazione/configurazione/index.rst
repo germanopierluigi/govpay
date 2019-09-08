@@ -80,8 +80,7 @@ Informazioni Applicative
    monitoraggio. Tipicamente si fornisce il "principal" dell'utenza
    applicativa registrata sull'Application Server, ma è in alternativa
    possibile indicare altre tipologie di utenze, come ad esempio
-   identificate dal Certificato Client Digitale (maggiori dettagli in
-   merito vengono forniti più avanti).
+   identificate dal Certificato Client Digitale.
 -  *Nome Dominio:* inserire l'hostname tramite il quale saranno
    raggiungibili i servizi di GovPay (ad esempio la console di
    monitoraggio).
