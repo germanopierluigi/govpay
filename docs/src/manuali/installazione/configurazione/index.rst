@@ -64,14 +64,8 @@ contesto di installazione nell'ambiente di esercizio.
 
 Devono essere inserite le seguenti informazioni:
 
--  **Application Server:*\ * *\ *la scelta dell'application server è
-   vincolata su "WildFly 11.0"**
--  **Work*\ * Folder: *\ *inserire il path assoluto della
-   *\ *directory*\ *, presente nell'ambiente di
-   *\ *destinazione*\ *,*\ * *\ *che sarà *\ *utilizzata da GovPay
-   *\ *per accedere a*\ * dati accessori *\ *legati alle*\ *
-   funzionalità opzionali, ad esempio:**
-
+-  **Application Server:** la scelta dell'application server è vincolata su "WildFly 11.0"**
+-  **Work Folder:** inserire il path assoluto della *directory*, presente nell'ambiente di destinazione, che sarà utilizzata da GovPay per accedere a dati accessori legati alle funzionalità opzionali, ad esempio:
    -  **file di configurazione personalizzati**
    -  **loghi dei psp**
 
