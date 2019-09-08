@@ -397,9 +397,15 @@ A partire dall'oggetto versamento, lo script estrae la causale, generando l'ogge
 
 .. code-block:: guess    
 
-   Gentile ${versamento.getAnagraficaDebitore().getRagioneSociale()}, le notifichiamo che e' stata elevata una sanzione amministrativa a suo carico: verbale n. ${versamento.getCodVersamentoEnte()} Puo' effettuare il pagamento on-line dal portale ${dominio.getRagioneSociale()} al seguente indirizzo: https://demo.govcloud.it/govpay-portal/?idDominio=01234567890&numeroAvviso=${versamento.getNumeroAvviso()} Oppure stampare l'avviso che trova allegato alla presente email per effettuare il pagamento presso un qualsiasi prestatore di servizi di pagamento aderente al circuito pagoPA. Distinti saluti.
+   Gentile ${versamento.getAnagraficaDebitore().getRagioneSociale()}, 
+   le notifichiamo che e' stata elevata una sanzione amministrativa a suo carico: verbale n. ${versamento.getCodVersamentoEnte()}.
+   Puo' effettuare il pagamento on-line dal portale ${dominio.getRagioneSociale()} al seguente indirizzo:
+   https://demo.govcloud.it/govpay-portal/?idDominio=01234567890&numeroAvviso=${versamento.getNumeroAvviso()}.
+   Oppure stampare l'avviso che trova allegato alla presente email per effettuare il pagamento presso un qualsiasi
+   prestatore di servizi di pagamento aderente al circuito pagoPA. 
+   Distinti saluti.
   
-  
+Ancora una volta si noti l'estrema personalizzabilità del sistema, che rende possibile variare i messaggi a seconda del dominio e del tipo di sanzione in modo trasparente e praticamente in tempo reale. Il messaggio può dipendere, in toni e riferimento, anche dall'eventuale ritardo rispetto alle scadenze, con tempistiche differenziate: ciò comporta la scrittura di logica di processo in termini elementari.
   
   
 Promemoria ricevuta telematica
