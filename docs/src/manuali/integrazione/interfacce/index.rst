@@ -93,6 +93,7 @@ Il risultato è il seguente
 Lo script completo è (si noti le parti di definizione dei pattern di email e codice fiscale)
 
 .. code-block:: guess
+   
    {
 	"schema": {
 		   "type": "object",
@@ -165,8 +166,9 @@ Validazione
 
 Lo script di validazione è ancora espresso nel formato json angular schema. Nel nostro esempio si presenta in questo modo:
 
-            
-              {
+.. code-block:: guess
+   
+   {
 	"schema": {
 		"type": "object",
 		"required": [
@@ -229,7 +231,7 @@ Lo script di validazione è ancora espresso nel formato json angular schema. Nel
 			"title": "Tipo di violazione"
 		}
 	]
-}
+   }
 
             
 Un'osservazione attenta dello script ne mostra la sostanziale equivalenza con quello di definizione del layout. In effetti lo script afferma che:
