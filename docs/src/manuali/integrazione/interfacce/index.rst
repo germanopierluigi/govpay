@@ -386,7 +386,7 @@ In buona sostanza, esiste una parte preparatoria, con una vera logica di trasfor
 Promemoria avviso di pagamento
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
-La piattaforma intende semplificare anche la corispondenza mail con il soggetto debitore, automatizzando l'invio degli avvisi di pagamento. Possiamo, nella sezione apposita, immettere due script freemarker, uno dedicato all'oggetto della mail, il secondo pensato per generare automaticamente il corpo della stessa. 
+La piattaforma intende semplificare anche la corispondenza mail con il soggetto debitore (ovviamente a patto che sia presente e presidiata la mail di quest'ultimo), automatizzando l'invio degli avvisi di pagamento. Possiamo, nella sezione apposita, immettere due script freemarker, uno dedicato all'oggetto della mail, il secondo pensato per generare automaticamente il corpo della stessa. 
 
 .. code-block:: guess    
 
@@ -410,4 +410,28 @@ Ancora una volta si noti l'estrema personalizzabilità del sistema, che rende po
   
 Promemoria ricevuta telematica
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A valle del processo di pagamento della pendenza, la piattaforma, similmente a quanto fatto con l'avviso di pagamento, semplifica l'invio di una ricevuta telematica al soggetto pagatore. Possiamo, nella sezione apposita, immettere due script freemarker, uno dedicato all'oggetto della mail, il secondo pensato per generare automaticamente il corpo della stessa. 
+
+.. code-block:: guess    
+
+   Promemoria pagamento: ${versamento.getCausaleVersamento().getSimple()}
+
+A partire dall'oggetto versamento, lo script estrae la causale, generando l'oggetto della mail dell'avviso di pagamento.
+
+
+.. code-block:: guess    
+
+   <#assign dataRichiesta = rpt.getDataMsgRichiesta()?string("yyyy-MM-dd HH:mm:ss")>
+   Il pagamento di "${versamento.getCausaleVersamento().getSimple()}" effettuato il ${dataRichiesta} risulta concluso con esito
+   ${rpt.getEsitoPagamento().name()}:
+   Ente creditore: ${dominio.getRagioneSociale()} (${dominio.getCodDominio()})
+   Istituto attestante: ${rpt.getDenominazioneAttestante()} (${rpt.getIdentificativoAttestante()})
+   Identificativo univoco versamento (IUV): ${rpt.getIuv()}
+   Codice contesto pagamento (CCP): ${rpt.getCcp()}
+   Importo pagato: ${rpt.getImportoTotalePagato()}
+   
+   Distinti saluti.
+  
+Questo tipo di soluzione per la ricevuta telematica possiede tutte le caratteristiche positive dell'avviso di pagamento viste nella sezione precedente.
   
