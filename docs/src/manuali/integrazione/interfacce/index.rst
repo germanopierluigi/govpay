@@ -415,10 +415,18 @@ A valle del processo di pagamento della pendenza, la piattaforma, similmente a q
 
 .. code-block:: guess    
 
-   Promemoria pagamento: ${versamento.getCausaleVersamento().getSimple()}
+   <#if rpt.getEsitoPagamento().getCodifica() = 0>
+     Notifica pagamento eseguito: ${rpt.getCodDominio()}/${rpt.getIuv()}/${rpt.getCcp()}
+   <#elseif rpt.getEsitoPagamento().getCodifica() = 1>
+     Notifica pagamento non eseguito: ${rpt.getCodDominio()}/${rpt.getIuv()}/${rpt.getCcp()}
+   <#elseif rpt.getEsitoPagamento().getCodifica() = 2>
+     Notifica pagamento eseguito parzialmente: ${rpt.getCodDominio()}/${rpt.getIuv()}/${rpt.getCcp()}
+   <#elseif rpt.getEsitoPagamento().getCodifica() = 3>
+     Notifica decorrenza termini pagamento: ${rpt.getCodDominio()}/${rpt.getIuv()}/${rpt.getCcp()}
+   <#elseif rpt.getEsitoPagamento().getCodifica() = 4>
+     Notifica decorrenza termini pagamento: ${rpt.getCodDominio()}/${rpt.getIuv()}/${rpt.getCcp()}
 
 A partire dall'oggetto versamento, lo script estrae la causale, generando l'oggetto della mail dell'avviso di pagamento.
-
 
 .. code-block:: guess    
 
