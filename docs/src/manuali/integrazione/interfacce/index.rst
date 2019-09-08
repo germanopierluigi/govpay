@@ -319,6 +319,37 @@ Al fine di contestualizzare in modo opportuno il discorso fin qui fatto, è oppo
    Contesto di riferimento della trasformazione
 
 
+Analizziamo ora le diverse parti dello script
+
+
+.. code-block:: guess    
+
+   <#assign jsonUtilities = class["org.openspcoop2.utils.json.JSONUtils"].getInstance()>
+   <#assign request = jsonUtilities.getAsNode(jsonPath.read("$"))>
+   <#assign calendar = class["java.util.Calendar"]>
+   <#assign now = new("java.util.Date")>
+   <#assign calendarInstance = calendar.getInstance()>
+   <#assign xxx = calendarInstance.setTime(now)!>
+   <#assign yyy = calendarInstance.add(calendar.MONTH, 1)!>
+   <#assign zzz = calendarInstance.set(calendar.DATE, calendarInstance.getActualMaximum(calendar.DAY_OF_MONTH))!>
+   <#assign dataValidita = calendarInstance.getTime()?string("yyyy-MM-dd")>
+   <#if request.get("tipoSanzione").asText() = "Violazione art. 123">
+	<#assign importo = "54.01">
+   <#elseif request.get("tipoSanzione").asText() = "Violazione art. 456">
+	<#assign importo = "123.6">
+   <#elseif request.get("tipoSanzione").asText() = "Violazione art. 678">
+	<#assign importo = "307">
+   <#setting locale="en_US">
+
+in questa sezione, oltre al trattamento abbozzato delle date di inizio e fine validità (si ricordi che si è in presenza di un esempio) si assegna l'importo in funzione del tipo di sanzione, con la relativa logica di controllo (<#if e seguenti)
+
+
+
+
+
+
+
+
 
 Promemoria avviso di pagamento
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
