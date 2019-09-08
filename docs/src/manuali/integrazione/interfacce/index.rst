@@ -257,7 +257,27 @@ Trasformazione
 ~~~~~~~~~~~~~~
 
 Questa sezione provvede all'instradamento, previa loro trasformazione, dei dati immessi nel form verso i servizi che li consumeranno. Vediamone un esempio complessivo i cui blocchi commenteremo in modo dettagliato:
-            
+       
+.. code-block:: guess                
+   <#assign jsonUtilities = class["org.openspcoop2.utils.json.JSONUtils"].getInstance()>
+   <#assign request = jsonUtilities.getAsNode(jsonPath.read("$"))>
+   <#assign calendar = class["java.util.Calendar"]>
+   <#assign now = new("java.util.Date")>
+   <#assign calendarInstance = calendar.getInstance()>
+   <#assign xxx = calendarInstance.setTime(now)!>
+   <#assign yyy = calendarInstance.add(calendar.MONTH, 1)!>
+   <#assign zzz = calendarInstance.set(calendar.DATE, calendarInstance.getActualMaximum(calendar.DAY_OF_MONTH))!>
+   <#assign dataValidita = calendarInstance.getTime()?string("yyyy-MM-dd")>
+   <#if request.get("tipoSanzione").asText() = "Violazione art. 123">
+	<#assign importo = "54.01">
+   <#elseif request.get("tipoSanzione").asText() = "Violazione art. 456">
+	<#assign importo = "123.6">
+   <#elseif request.get("tipoSanzione").asText() = "Violazione art. 678">
+	<#assign importo = "307">
+   <#setting locale="en_US">
+   
+       
+       
 .. figure:: ../_images/INT11_FormTrasformazione-1.png
    :align: center
    :name: Validazione1
