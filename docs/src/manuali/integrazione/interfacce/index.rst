@@ -343,18 +343,61 @@ Analizziamo ora le diverse parti dello script
 
 in questa sezione, oltre al trattamento abbozzato delle date di inizio e fine validità (si ricordi che si è in presenza di un esempio) si assegna l'importo in funzione del tipo di sanzione, con la relativa logica di controllo (<#if e seguenti)
 
+Vediamo la sezione di trasformazione vera e propria, con la logica di alimentazione del servizio web di inoltro:
 
+.. code-block:: guess    
+     
+   {
+	"idA2A": "A2A-DEMO",
+	"idPendenza": "${request.get("idPendenza").asText()}",
+	"idDominio": "${pathParams["idDominio"]}",
+	"idTipoPendenza": "${pathParams["idTipoPendenza"]}",
+ 	"causale": "Sanzione amministrativa - Verbale n. ${request.get("idPendenza").asText()}",
+	"soggettoPagatore": {
+		"tipo": "F",
+		"identificativo": "${request.get("soggettoPagatore").get("identificativo").asText()}",
+		"anagrafica": "${request.get("soggettoPagatore").get("anagrafica").asText()}",
+		"email": "${request.get("soggettoPagatore").get("email").asText()}"
+	},
+   	"importo": "${importo}",
+	"dataValidita": "${dataValidita}",
+	"dataScadenza": "${dataValidita}",
+	"tassonomiaAvviso": "Servizi erogati dal comune",
+	"voci": [
+		{
+			"idVocePendenza": "1",
+			"importo": "${importo}",
+			"descrizione": "${request.get("tipoSanzione").asText()}",
+			"ibanAccredito": "IT02L1234500000111110000001",
+			"tipoContabilita": "ALTRO",
+			"codiceContabilita": "${pathParams["idTipoPendenza"]}"
+		}
+	]
+   }
 
+Possiamo notare che:
+*  idPendenza viene preso dal corrispondente campo definito nella sezione di layout. Occorre porre particolare attenzione a che il wording sia il medesimo di quello in definizione formale del form
+*  idDominio, idTipoPendenza vengono valorizzati nello stesso modo
+*  si definisce l'input, per il campo composto voci, come idVocePendenza, importo, descrizione (preso direttamente dalla request), ibanAccredito imposto come fisso, tipo e codice contabilità
 
-
-
-
+In buona sostanza, esiste una parte preparatoria, con una vera logica di trasformazione e definizione di variabili intermedie, ed una parte di elencazione dei parametri del servizio di inoltro che viene implementata a partire dai semilavorati della prima parte. Il risultato è comunque di avere un sistema di input, trasformazione ed elaborazione configurato e pronto per la produzione tramite la scrittura di alcuni semplici script, ovvero senza le costose, classiche fasi di costruzione di un front-end dedicato propriamente detto. Questa metodologia assicura l'ottimizzazione di tempi e costi e la possibilità di effettuare modifiche praticamente in tempo reale. 
 
 
 Promemoria avviso di pagamento
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   
-  
+La piattaforma intende semplificare anche la corispondenza mail con il soggetto debitore, automatizzando l'invio degli avvisi di pagamento. Possiamo, nella sezione apposita, immettere due script freemarker, uno dedicato all'oggetto della mail, il secondo pensato per generare automaticamente il corpo della stessa. 
+
+.. code-block:: guess    
+
+   Promemoria pagamento: ${versamento.getCausaleVersamento().getSimple()}
+
+A partire dall'oggetto versamento, lo script estrae la causale, generando l'oggetto della mail dell'avviso di pagamento.
+
+
+.. code-block:: guess    
+
+   Gentile ${versamento.getAnagraficaDebitore().getRagioneSociale()}, le notifichiamo che e' stata elevata una sanzione amministrativa a suo carico: verbale n. ${versamento.getCodVersamentoEnte()} Puo' effettuare il pagamento on-line dal portale ${dominio.getRagioneSociale()} al seguente indirizzo: https://demo.govcloud.it/govpay-portal/?idDominio=01234567890&numeroAvviso=${versamento.getNumeroAvviso()} Oppure stampare l'avviso che trova allegato alla presente email per effettuare il pagamento presso un qualsiasi prestatore di servizi di pagamento aderente al circuito pagoPA. Distinti saluti.
   
   
   
