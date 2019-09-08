@@ -69,8 +69,7 @@ Devono essere inserite le seguenti informazioni:
    -  **file di configurazione personalizzati**
    -  **loghi dei psp**
 
--  **Log Folder**: inserire il path assoluto della directory, presente
-   nell'ambiente di destinazione, che sarà utilizzata da GovPay per
+-  **Log Folder**: inserire il path assoluto della directory, presente nell'ambiente di destinazione, che sarà utilizzata da GovPay per
    inserire i diversi file di tracciamento prodotti.
 
 Informazioni Applicative
