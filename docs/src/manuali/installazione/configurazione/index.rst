@@ -42,12 +42,14 @@ Sono mostrate informazioni quali:
 Selezionando il pulsante Next si procede con la configurazione del
 software.
 
-.. figure:: ../_figure_installazione/100002010000022600000192C7342CEDBB4934E5.png
-   :alt: Figura 1: Pagina introduttiva all'avvio dell'Installer
-   :width: 14.224cm
-   :height: 10.211cm
+.. figure:: ../_Images/INS01_AvvioInstaller.png
+   :alt: Pagina introduttiva all'avvio dell'Installer
+   :align: center
+   :name: PaginaIntroduttivaInstaller
 
-   Figura 1: Pagina introduttiva all'avvio dell'Installer
+   Area iniziale Cruscotto
+
+   Pagina introduttiva all'avvio dell'Installer
 
 Informazioni Preliminari
 ~~~~~~~~~~~~~~~~~~~~~~~~
