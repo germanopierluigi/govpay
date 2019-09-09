@@ -513,21 +513,6 @@ Vediamo un esempio di un file di definizione dell'interfaccia:
    }
 
 
-
-
-
-
-
-.. figure:: ../_images/28SchemaFormEntrata1.jpg
-   :align: center
-   :name: MenuDefinizioneForm1
-      
-.. figure:: ../_images/29SchemaFormEntrata2.jpg
-   :align: center
-   :name: MenuDefinizioneForm2
-   
-   Funzionalità selezionabili per la definizione form
-
 Elaborazione
 ~~~~~~~~~~~~
 
