@@ -42,7 +42,7 @@ Sono mostrate informazioni quali:
 Selezionando il pulsante Next si procede con la configurazione del
 software.
 
-.. figure:: ../_Images/INS01_AvvioInstaller.png
+.. figure:: ../_images/INS01_AvvioInstaller.png
    :alt: Pagina introduttiva all'avvio dell'Installer
    :align: center
    :name: PaginaIntroduttivaInstaller
