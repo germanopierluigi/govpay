@@ -100,12 +100,13 @@ Il Database
 Nella schermata "Il Database" si devono inserire i riferimenti per
 l'accesso al database di esercizio di GovPay.
 
-.. figure:: ../_figure_installazione/100002010000022600000192A2989B695B3A28EB.png
-   :alt: Figura 4: Informazioni Accesso Database
-   :width: 14.21cm
-   :height: 10.183cm
-
-   Figura 4: Informazioni Accesso Database
+.. figure:: ../_images/INS04_InformazioniAccessoDatabase.png
+   :alt: Pagina relativa alle informazioni di accesso al database
+   :align: center
+   :name: InstallazioneInformazioniAccessoDB
+   
+   Informazioni accesso al DB
+   
 
 -  **DB Platform:** selezionare la piattaforma RDBMS utilizzata
 -  **Hostname**: indirizzo per raggiungere il database
@@ -128,13 +129,14 @@ con la produzione dei files necessari per l’installazione di GovPay che
 verranno inseriti nella nuova directory **dist** creata al termine di
 questo processo.
 
-.. figure:: ../_figure_installazione/1000020100000227000001912C8859F6CB3B2892.png
-   :alt: Figura 5: Installazione Terminata
-   :width: 14.446cm
-   :height: 10.53cm
-
-   Figura 5: Installazione Terminata
-
+.. figure:: ../_images/INS05_InstallazioneTerminata.png
+   :alt: Pagina relativa alla fine dell'installazione
+   :align: center
+   :name: InstallazioneTerminata
+   
+   Installazione terminata
+   
+   
 I files presenti nella directory **dist** dovranno essere utilizzati
 nella fase successiva di dispiegamento di GovPay.
 
