@@ -47,8 +47,6 @@ software.
    :align: center
    :name: PaginaIntroduttivaInstaller
 
-   Area iniziale Cruscotto
-
    Pagina introduttiva all'avvio dell'Installer
 
 Informazioni Preliminari
@@ -57,12 +55,12 @@ Informazioni Preliminari
 La schermata "Informazioni Preliminari" consente di inserire i dati sul
 contesto di installazione nell'ambiente di esercizio.
 
-.. figure:: ../_figure_installazione/100002010000022700000192CD0548360449197A.png
-   :alt: Figura 2: Informazioni Preliminari
-   :width: 14.224cm
-   :height: 10.363cm
+.. figure:: ../_images/INS02_InformazioniPreliminari.png
+   :alt: Pagina relativa alle informazioni preliminari
+   :align: center
+   :name: InstallazioneInformazioniPreliminari
 
-   Figura 2: Informazioni Preliminari
+   Informazioni preliminari
 
 Devono essere inserite le seguenti informazioni:
 
@@ -87,12 +85,14 @@ Informazioni Applicative
    raggiungibili i servizi di GovPay (ad esempio la console di
    monitoraggio).
 
-.. figure:: ../_figure_installazione/100002010000022700000192D4FF505CBCE8C644.png
-   :alt: Figura 3: Informazioni Applicative
-   :width: 14.143cm
-   :height: 9.959cm
 
-   Figura 3: Informazioni Applicative
+.. figure:: ../_images/INS03_InformazioniApplicative.png
+   :alt: Pagina relativa alle informazioni applicative
+   :align: center
+   :name: InstallazioneInformazioniApplicative
+
+   Informazioni applicative
+
 
 Il Database
 ~~~~~~~~~~~
